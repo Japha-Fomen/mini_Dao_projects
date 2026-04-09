@@ -8,7 +8,7 @@ import java.util.List;
 
 public class StudentDao {
     public void insert(int id,String name,int age) throws SQLException {
-        String query = "insert into students(id,name,age) values (?,?,?)";
+        String query = "insert into Student(id,name,age) values (?,?,?)";
         Connection conn = DataBaseConnection.getConnection();
         PreparedStatement pstmt = conn != null ? conn.prepareStatement(query) : null;
         assert pstmt != null;
@@ -17,8 +17,18 @@ public class StudentDao {
         pstmt.setInt(3,age);
         pstmt.executeUpdate();
     }
+    public void insert(Student student) throws SQLException {
+        String query = "insert into Student(id,name,age) values (?,?,?)";
+        Connection conn = DataBaseConnection.getConnection();
+        PreparedStatement pstmt = conn != null ? conn.prepareStatement(query) : null;
+        assert pstmt != null;
+        pstmt.setInt(1,student.getId());
+        pstmt.setString(2,student.getName());
+        pstmt.setInt(3,student.getAge());
+        pstmt.executeUpdate();
+    }
     public void delete(int id){
-        String query = "delete from students where id=?";
+        String query = "delete from Student where id=?";
         Connection conn=DataBaseConnection.getConnection();
         try {
             assert conn != null;
@@ -30,7 +40,7 @@ public class StudentDao {
         }
     }
     public Student find(int id){
-        String query = "select * from students where id=?";
+        String query = "select * from student where id=?";
         Connection conn=DataBaseConnection.getConnection();
         try {
             assert conn != null;
@@ -50,7 +60,7 @@ public class StudentDao {
     }
     public List<Student> findAll(){
         List<Student> list=new ArrayList<>();
-        String query = "select * from students";
+        String query = "select * from student";
         Connection conn=DataBaseConnection.getConnection();
         try {
             assert conn != null;
