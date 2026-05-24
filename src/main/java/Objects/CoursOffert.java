@@ -1,12 +1,23 @@
 package Objects;
 
+/**
+ * Représente un cours offert pour une session donnée.
+ * Contient les informations sur la matière, l'enseignant, la session et l'année.
+ *
+ * Auteur : Japha Fomen
+ * Version : 1.0
+ */
 public class CoursOffert {
+
     private int idCoursOffert;
     private String idMatiere;
     private int idEnseignant;
     private String session;
     private int annee;
 
+    /**
+     * Constructeur complet incluant l'identifiant du cours offert.
+     */
     public CoursOffert(int idCoursOffert, String idMatiere, int idEnseignant, String session, int annee) {
         this.idCoursOffert = idCoursOffert;
         this.idMatiere = idMatiere;
@@ -15,6 +26,9 @@ public class CoursOffert {
         this.annee = annee;
     }
 
+    /**
+     * Constructeur utilisé lors de la création d'un nouveau cours offert.
+     */
     public CoursOffert(String idMatiere, int idEnseignant, String session, int annee) {
         this.idMatiere = idMatiere;
         this.idEnseignant = idEnseignant;
@@ -32,5 +46,4 @@ public class CoursOffert {
     public void setIdEnseignant(int idEnseignant) { this.idEnseignant = idEnseignant; }
     public void setSession(String session) { this.session = session; }
     public void setAnnee(int annee) { this.annee = annee; }
-
 }

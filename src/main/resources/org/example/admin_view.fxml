@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  LEÇON FXML #4 — TabPane
+  ────────────────────────
+  • TabPane contient plusieurs onglets (Tab).
+  • tabClosingPolicy="UNAVAILABLE" → l'utilisateur ne peut pas fermer les onglets.
+  • Chaque Tab a une propriété <content> qui contient son layout racine.
+  • Les colonnes des TableViews sont ajoutées dans le controller (initialize).
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.AdminController"
+            styleClass="main-root"
+            prefWidth="1100" prefHeight="700">
+
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="12">
+            <padding><Insets top="14" bottom="14" left="20" right="20"/></padding>
+            <Label text="Tableau de bord — Administrateur"
+                   styleClass="header-title" HBox.hgrow="ALWAYS"/>
+            <Button text="Déconnexion" onAction="#onDeconnexion" styleClass="logout-btn"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <padding><Insets top="8" bottom="8" left="8" right="8"/></padding>
+
+            <!-- ── Tab : Étudiants ── -->
+            <Tab text="Étudiants">
+                <content>
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <HBox spacing="8">
+                            <Button text="Ajouter"             onAction="#onAjouterEtudiant"  styleClass="success-btn"/>
+                            <Button text="Modifier"            onAction="#onModifierEtudiant" styleClass="action-btn"/>
+                            <Button text="Supprimer"           onAction="#onSupprimerEtudiant" styleClass="danger-btn"/>
+                            <Button text="Inscrire à un cours" onAction="#onInscrireEtudiant"  styleClass="action-btn"/>
+                        </HBox>
+                        <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS" prefHeight="540">
+                            <placeholder><Label text="Aucun étudiant enregistré."/></placeholder>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <!-- ── Tab : Enseignants ── -->
+            <Tab text="Enseignants">
+                <content>
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <HBox spacing="8">
+                            <Button text="Ajouter"   onAction="#onAjouterEnseignant"   styleClass="success-btn"/>
+                            <Button text="Modifier"  onAction="#onModifierEnseignant"  styleClass="action-btn"/>
+                            <Button text="Supprimer" onAction="#onSupprimerEnseignant" styleClass="danger-btn"/>
+                        </HBox>
+                        <TableView fx:id="enseignantsTable" VBox.vgrow="ALWAYS" prefHeight="540">
+                            <placeholder><Label text="Aucun enseignant enregistré."/></placeholder>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <!-- ── Tab : Matières ── -->
+            <Tab text="Matières">
+                <content>
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <HBox spacing="8">
+                            <Button text="Ajouter"   onAction="#onAjouterMatiere"   styleClass="success-btn"/>
+                            <Button text="Supprimer" onAction="#onSupprimerMatiere" styleClass="danger-btn"/>
+                        </HBox>
+                        <TableView fx:id="matieresTable" VBox.vgrow="ALWAYS" prefHeight="540">
+                            <placeholder><Label text="Aucune matière enregistrée."/></placeholder>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <!-- ── Tab : Cours Offerts ── -->
+            <Tab text="Cours Offerts">
+                <content>
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <HBox spacing="8">
+                            <Button text="Ajouter"   onAction="#onAjouterCours"   styleClass="success-btn"/>
+                            <Button text="Modifier"  onAction="#onModifierCours"  styleClass="action-btn"/>
+                            <Button text="Supprimer" onAction="#onSupprimerCours" styleClass="danger-btn"/>
+                        </HBox>
+                        <TableView fx:id="coursTable" VBox.vgrow="ALWAYS" prefHeight="540">
+                            <placeholder><Label text="Aucun cours offert."/></placeholder>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <!-- ── Tab : Inscriptions ── -->
+            <Tab text="Inscriptions">
+                <content>
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <HBox spacing="8">
+                            <Button text="Ajouter inscription"   onAction="#onAjouterInscription"   styleClass="success-btn"/>
+                            <Button text="Supprimer inscription" onAction="#onSupprimerInscription" styleClass="danger-btn"/>
+                        </HBox>
+                        <TableView fx:id="inscriptionsTable" VBox.vgrow="ALWAYS" prefHeight="540">
+                            <placeholder><Label text="Aucune inscription."/></placeholder>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+</BorderPane>

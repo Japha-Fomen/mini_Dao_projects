@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  LEÇON FXML #1 — Structure de base
+  ─────────────────────────────────
+  • fx:controller  → lie ce fichier à sa classe Java LoginController
+  • fx:id          → donne un nom à un nœud pour l'injecter via @FXML
+  • onAction       → appelle la méthode du controller (préfixe # obligatoire)
+  • userData       → stocke une donnée arbitraire sur un nœud (récupérée en Java)
+  • StackPane      → superpose les enfants au centre (parfait pour une page de login)
+-->
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.LoginController"
+           styleClass="login-root"
+           prefWidth="500" prefHeight="440">
+
+    <VBox alignment="CENTER" spacing="28" maxWidth="420">
+        <padding>
+            <Insets top="40" bottom="40" left="40" right="40"/>
+        </padding>
+
+        <!-- Titre -->
+        <VBox alignment="CENTER" spacing="6">
+            <Label text="Gestion Académique" styleClass="title-label"/>
+            <Label text="Choisissez votre rôle pour accéder au système"
+                   styleClass="subtitle-label" wrapText="true"
+                   textAlignment="CENTER" maxWidth="320"/>
+        </VBox>
+
+        <!-- 3 boutons de rôle -->
+        <HBox alignment="CENTER" spacing="12">
+            <!--
+              userData="student" → valeur récupérée via btn.getUserData() en Java.
+              Ça évite de comparer getText() (fragile) et préserve le texte affiché.
+            -->
+            <Button fx:id="btnEtudiant"   text="Étudiant"        onAction="#onRoleSelected"
+                    styleClass="role-btn" userData="student"    prefWidth="120"/>
+            <Button fx:id="btnEnseignant" text="Enseignant"       onAction="#onRoleSelected"
+                    styleClass="role-btn" userData="enseignant" prefWidth="120"/>
+            <Button fx:id="btnAdmin"      text="Administrateur"   onAction="#onRoleSelected"
+                    styleClass="role-btn" userData="admin"      prefWidth="130"/>
+        </HBox>
+
+        <!--
+          LEÇON : visible="false" cache visuellement le nœud,
+                  mais il prend toujours de la place dans le layout.
+          managed="false" → le nœud est complètement exclu du layout.
+          On doit changer LES DEUX pour apparaître/disparaître sans décalage.
+        -->
+        <VBox fx:id="idSection" visible="false" managed="false"
+              alignment="CENTER" spacing="10">
+            <!-- Champ ID -->
+            <Label text="Votre ID :" styleClass="field-label"/>
+            <TextField fx:id="idField" promptText="Ex : 1001"
+                       prefWidth="220" styleClass="id-field"/>
+            <!-- Champ Nom (pour vérification en base de données) -->
+            <Label text="Votre nom :" styleClass="field-label"/>
+            <TextField fx:id="nomField" promptText="Ex : Jean Dupont"
+                       prefWidth="220" styleClass="id-field"/>
+        </VBox>
+
+        <Button fx:id="btnConnexion" text="Se connecter" onAction="#onConnexion"
+                visible="false" managed="false"
+                styleClass="connect-btn" prefWidth="220"/>
+
+        <Label fx:id="errorLabel" styleClass="error-label" text=""
+               wrapText="true" textAlignment="CENTER" maxWidth="320"/>
+    </VBox>
+</StackPane>

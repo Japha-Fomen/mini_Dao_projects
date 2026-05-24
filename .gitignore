@@ -1,0 +1,20 @@
+# ── Maven ──────────────────────────────────────────────────────────
+target/
+
+# ── IntelliJ IDEA ──────────────────────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ── Credentials — NE JAMAIS COMMITER CE FICHIER ────────────────────
+src/main/resources/db.properties
+
+# ── Fichiers internes de l'éditeur / outils ────────────────────────
+.claude/
+*.class
+
+# ── Système d'exploitation ─────────────────────────────────────────
+.DS_Store
+Thumbs.db

@@ -1,26 +1,27 @@
 package DtoObjects;
 
+/**
+ * Représente les informations d'un cours suivi par un étudiant.
+ * Combine les données du cours, de la matière, de l'enseignant et de l'inscription.
+ *
+ * Auteur : Japha Fomen
+ * Version : 1.0
+ */
 public class CoursStudentDto {
-    private int idCoursOffert;
 
-    // Informations sur la matière
+    private int idCoursOffert;
     private String codeMatiere;
     private String nomMatiere;
-
-    // Informations sur l'enseignant
     private String nomEnseignant;
     private String emailEnseignant;
-
-    // Informations sur la session
     private String session;
     private int annee;
+    private String statut;
+    private Double note;
 
-    // Informations sur l'inscription de l'étudiant
-    private String statut;   // passed / fail / on_going
-    private Double note;     // peut être null
-
-
-
+    /**
+     * Constructeur complet du DTO étudiant-cours.
+     */
     public CoursStudentDto(int idCoursOffert,
                            String codeMatiere,
                            String nomMatiere,
@@ -40,7 +41,6 @@ public class CoursStudentDto {
         this.annee = annee;
         this.statut = statut;
         this.note = note;
-
     }
 
     public int getIdCoursOffert() { return idCoursOffert; }
@@ -52,5 +52,4 @@ public class CoursStudentDto {
     public int getAnnee() { return annee; }
     public String getStatut() { return statut; }
     public Double getNote() { return note; }
-
 }

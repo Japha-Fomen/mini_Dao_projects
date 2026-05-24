@@ -1,0 +1,127 @@
+/* ====== BASE ====== */
+.login-root  { -fx-background-color: #f0f4f8; }
+.main-root   { -fx-background-color: #f0f4f8; }
+
+/* ====== TYPOGRAPHY ====== */
+.title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+.header-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.header-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #bdc3c7;
+}
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #555;
+}
+.error-label  { -fx-text-fill: #e74c3c; -fx-font-size: 13px; }
+.status-label { -fx-font-size: 12px; -fx-text-fill: #7f8c8d; }
+
+/* ====== HEADER ====== */
+.header {
+    -fx-background-color: #2c3e50;
+    -fx-spacing: 10;
+}
+
+/* ====== ROLE BUTTONS (Login) ====== */
+.role-btn {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+}
+.role-btn:hover      { -fx-background-color: #ecf0f1; }
+.role-btn-selected   {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-color: #2980b9;
+}
+
+/* ====== CONNECT BUTTON ====== */
+.connect-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24 10 24;
+    -fx-cursor: hand;
+}
+.connect-btn:hover { -fx-background-color: #2980b9; }
+
+/* ====== ACTION BUTTONS ====== */
+.action-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-padding: 6 14 6 14;
+}
+.action-btn:hover { -fx-background-color: #2980b9; }
+
+.success-btn {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-padding: 6 14 6 14;
+}
+.success-btn:hover { -fx-background-color: #219a52; }
+
+.danger-btn {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-padding: 6 14 6 14;
+}
+.danger-btn:hover { -fx-background-color: #c0392b; }
+
+.logout-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7;
+    -fx-border-color: #7f8c8d;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-padding: 5 12 5 12;
+}
+.logout-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+}
+
+/* ====== TEXT FIELD ====== */
+.id-field {
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 14px;
+    -fx-pref-height: 36px;
+}
+
+/* ====== BOTTOM ACTION BAR ====== */
+.action-bar {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-width: 1 0 0 0;
+}

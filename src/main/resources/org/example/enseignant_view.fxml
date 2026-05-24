@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  LEÇON FXML #3 — SplitPane
+  ─────────────────────────
+  • SplitPane sépare l'espace en panneaux redimensionnables par l'utilisateur.
+  • dividerPositions="0.42" → le séparateur est positionné à 42% de la largeur.
+  • Chaque enfant direct du SplitPane devient un panneau.
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.EnseignantController"
+            styleClass="main-root"
+            prefWidth="1050" prefHeight="660">
+
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="12">
+            <padding><Insets top="14" bottom="14" left="20" right="20"/></padding>
+            <Label text="Tableau de bord — Enseignant"
+                   styleClass="header-title" HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="header-subtitle"/>
+            <Button text="Déconnexion" onAction="#onDeconnexion" styleClass="logout-btn"/>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.42">
+            <padding><Insets top="14" bottom="0" left="14" right="14"/></padding>
+
+            <!-- Panneau gauche : mes cours -->
+            <VBox spacing="6">
+                <Label text="Mes cours" styleClass="field-label"/>
+                <TableView fx:id="coursTable" VBox.vgrow="ALWAYS">
+                    <placeholder><Label text="Aucun cours."/></placeholder>
+                </TableView>
+            </VBox>
+
+            <!-- Panneau droit : étudiants du cours sélectionné -->
+            <VBox spacing="6">
+                <Label fx:id="courseDetailLabel"
+                       text="← Sélectionnez un cours" styleClass="field-label"/>
+                <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS">
+                    <placeholder><Label text="Sélectionnez un cours à gauche."/></placeholder>
+                </TableView>
+            </VBox>
+
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox styleClass="action-bar" alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets top="12" bottom="12" left="16" right="16"/></padding>
+            <Button text="Ajouter un support"  onAction="#onAjouterSupport"  styleClass="action-btn"/>
+            <Button text="Noter l'étudiant"     onAction="#onNoterEtudiant"   styleClass="success-btn"/>
+            <Button text="Changer le statut"    onAction="#onChangerStatut"   styleClass="action-btn"/>
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,11 @@
+# ──────────────────────────────────────────────────────────────────
+# MODÈLE DE CONFIGURATION — Copier ce fichier en "db.properties"
+# et remplir les valeurs avec vos propres credentials.
+#
+# ⚠️  db.properties est dans .gitignore : il ne sera jamais commité.
+#     Ce fichier (.example) sert uniquement de modèle pour les autres développeurs.
+# ──────────────────────────────────────────────────────────────────
+
+db.url=jdbc:mysql://127.0.0.1:3307/NOM_DE_VOTRE_BASE
+db.user=root
+db.password=VOTRE_MOT_DE_PASSE
